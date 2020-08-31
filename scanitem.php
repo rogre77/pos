@@ -13,10 +13,9 @@
 
   if(isset($_POST['btnPay'])!=""){
 		//Initialize terminal 
-			$terminal->initTerminal($shopcart);
+      $terminal->initTerminal($shopcart);
   }
-
-  $barcodes = str_split($_POST['BarCode']);
+  $barcodes = str_split(strtoupper($_POST['BarCode']));
   //print_r($barcodes);
 
   foreach ($barcodes as $barcode) {
